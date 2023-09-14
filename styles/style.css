@@ -116,7 +116,7 @@ nav ul li:active{
 aside{
     position: fixed;
     width: 100%;
-    margin: auto;
+    height: 100%;
     height: auto;
     background:rgba(245, 245, 245, 0.146);
     backdrop-filter: blur;
@@ -337,8 +337,6 @@ main section{
 }
 .content .content-text-right {
    flex-basis: 60%;
-   opacity: 0;
-   transform: translate(-100px);
 }
 .content-text-right table{
     height: 220px;
@@ -410,8 +408,6 @@ main section{
     flex-direction: column;
     justify-content: center;
     padding: 10px 70px;
-    opacity: 0;
-    transform: translateX(100px);
 }
 .content-text-left .learning{
     position: relative;
