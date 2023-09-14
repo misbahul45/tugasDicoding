@@ -50,6 +50,34 @@ window.addEventListener("scroll", () => {
 
 gsap.registerPlugin(ScrollTrigger);
 
+function animationRight(element){
+  gsap.to(element,{
+    x:0,
+    opacity:1,
+    scrollTrigger:{
+        trigger:element,
+        start:"top 90%",
+        end:"top center",
+        scrub:true,
+        pin:".square",
+        pinSpacing:false,
+    }
+  })
+}
+function animationLeft(element){
+  gsap.to(element,{
+    x:0,
+    opacity:1,
+    scrollTrigger:{
+        trigger:element,
+        start:"top 90%",
+        end:"top center",
+        scrub:true,
+        pin:".square",
+        pinSpacing:false,
+    }
+  })
+}
 function animationBottom(element){
   gsap.to(element,{
     y:0,
