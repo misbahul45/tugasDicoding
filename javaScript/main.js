@@ -2,24 +2,27 @@
 const aside = document.querySelector("aside");
 const menuBar = document.querySelector(".menu i");
 let isClick = false;
-
+const header = document.querySelector(".header-animation");
 menuBar.onclick=()=>{
     if (isClick===false) {
         menuBar.classList.remove("fa-bars");
         menuBar.classList.add("fa-close");
         aside.style.transform = "translateY(0) scale(1)";
+        header.style.transform="scale(0)"
         isClick=true;
     }else{ 
         menuBar.classList.remove("fa-close");
         menuBar.classList.add("fa-bars");
         aside.style.transform="translateY(-500px)scale(0)"
+        setTimeout(()=>{
+          header.style.transform="scale(1)"
+        },100)
         isClick=false;
     }
 }
 
 
 //scrool animation
-const header = document.querySelector(".header-animation");
 const textHome=document.querySelector(".text-title");
 const textP=document.querySelector(".text p")
 const textButton=document.querySelector(".text button");

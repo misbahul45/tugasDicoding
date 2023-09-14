@@ -34,6 +34,7 @@ header{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
+
 .logo h1{
     font-size: 20px;
     background:linear-gradient(150deg,cyan,rgb(67, 125, 250));
@@ -115,70 +116,66 @@ nav ul li:active{
 /*styling sidebar*/
 aside{
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
-    height: auto;
-    background:rgba(245, 245, 245, 0.146);
-    backdrop-filter: blur;
-    padding: 20px 0;
-    border-bottom-right-radius:20px ;
-    border-bottom-left-radius:20px ;
-    z-index: 10;
-    transform: translateY(-500px)scale(0);
-    backdrop-filter: blur(10px);
-    transition: all 0.5s ease-in-out;
-    box-shadow: 10px 10px 20px rgba(0, 255, 255, 0.235);
+    height: 72vh;
+    padding: 20px 30px 10px 20px;
+    background-color: rgba(86, 225, 249, 0.247);
+    z-index: 100;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 20px 20px 20px rgba(0, 255, 255, 0.365);
+    transform: scale(0) translateY(200px);
+}
+aside .top{
+    display: flex;
+    gap: 10px;
+}
+aside img{
+    width: 120px;
+    display: block;
+    margin: auto;
+    box-shadow: 20px 20px 20px rgba(0, 255, 255, 0.192);
+}
+aside .sidebar{
+    height: 250px;
+    width: 100%;
 }
 .menu{
-    padding: 10px;
     position: fixed;
-    top: 10px;
+    top: 15px;
     right: 20px;
     z-index: 1000;
-    cursor: pointer;
-    backdrop-filter: blur(7px);
-    display: none;
 }
 .menu i{
     color: white;
     font-size: 30px;
 }
-.sidebar{
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 90%;
-    padding: 20px 10px;
-}
+
 .sidebar ul{
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
     gap: 10px;
 }
 .sidebar ul li{
-    background-color: blue;
-    padding: 8px 15px;
-    border-radius: 20px;
-    transition: all 0.5s ease;
-}
-.sidebar ul li:hover{
-    background-color: aqua;
-    transform: scaleY(1.2);
+    list-style-type: none;
+    background-color:rgba(40, 40, 246, 0.945);
+    padding: 10px 20px;
+    border-radius: 28px;
 }
 .sidebar ul li a{
-    color: aliceblue;
+    color: white;
     text-decoration: none;
-    transition: all 0.5s ease;
-    cursor: pointer;
 }
-.sidebar ul li:hover a{
-    color: darkblue;
-    font-weight: 700;
-}
-.sidebar ul li:active{
-    background-color:red;
+.sidebar ul li:active {
+    background-color: red;
 }
 
 /*styling main*/
@@ -332,32 +329,37 @@ main section{
 } 
 .about-content .content{
     display: flex;
-    justify-content: space-between;
     padding: 10px 90px 20px 0;
 }
 .content .content-text-right {
    flex-basis: 60%;
+   padding: 10px;
 }
-.content-text-right table{
-    height: 220px;
+.content-text-right .table-container{
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
 }
-.content-text-right table tr td{
- border-bottom: 2px solid aqua;
- color: aliceblue;
- font-weight: 500;
+.table-container .table-row{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
-.content-text-right table tr td span{
-    color: aliceblue;
-    font-weight: 750;
-    letter-spacing: 1px;
+.table-cell p{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.table-row .table-cell{
+    border-bottom: 2px solid aqua;
+    padding: 10px 3px;
 }
 .content-text-right .right-button{
-    display: flex;
+   display: flex;
    justify-content: center;
    gap: 10px;
-   margin-top: 10px;
-   z-index: -100;
+   margin-top: 20px;
 }
 .right-button button{
     position: relative;
@@ -464,7 +466,7 @@ main section{
 }
 .swiper-container {
     width: 350px;
-    padding-top: 50px;
+    padding-top: 10px;
     position: relative;
     opacity: 0;
     transform: translateY(200px);
@@ -791,9 +793,11 @@ footer .social-icons{
     color: white;
 }
 
-
 @media screen and (max-width: 680px) {
     nav{
+        display: none;
+    }
+    header .header-title{
         display: none;
     }
     .menu{
@@ -852,6 +856,9 @@ footer .social-icons{
         width: 100%;
         padding: 0;
     }
+    .table-container{
+        width: 90%;
+       }      
 }
 
 @media screen and (max-width: 500px) {
@@ -932,26 +939,4 @@ footer .social-icons{
  .services{
      padding-bottom: 0;
  }
- table{
-    width: 100%;
-    border-collapse:none;
- }
-  table tr {
-    display: block;
-    margin-bottom: 2px;
-  }
-  
-  table td {
-    display: block;
-    font-size: .8em;
-    text-align: left;
-  }
-  
-  table td::before {
-    float: left;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-
 }
